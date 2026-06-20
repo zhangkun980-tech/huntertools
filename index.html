@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>怪物猎人配装器 | 曙光配装器与荒野配装器</title>
+    <meta
+      name="description"
+      content="怪物猎人中文配装工具入口，支持怪物猎人崛起：曙光配装器与怪物猎人荒野配装器。按技能、护石、槽位和武器类型搜索配装方案。"
+    />
+    <meta name="keywords" content="怪物猎人配装器,MHR配装,曙光配装器,怪物猎人荒野配装器,Monster Hunter Wilds build,护石,装饰品,技能搜索" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://mhr-build.example.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content="怪物猎人配装器 - 曙光与荒野配装入口" />
+    <meta property="og:description" content="选择怪物猎人崛起：曙光或怪物猎人荒野版本，快速进入对应配装器。" />
+    <meta property="og:image" content="https://mhr-build.example.com/assets/hero-forge.png" />
+    <meta property="og:url" content="https://mhr-build.example.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#111827" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" href="assets/hero-forge.png" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- 上线 AdSense 后，把 ca-pub-XXXXXXXXXXXXXXXX 替换成自己的发布商 ID，并在 AdSense 后台添加站点。 -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+      crossorigin="anonymous"
+    ></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "怪物猎人配装器",
+        "inLanguage": "zh-Hans",
+        "description": "怪物猎人中文配装工具，提供曙光配装器与荒野配装器入口。",
+        "url": "https://mhr-build.example.com/",
+        "image": "https://mhr-build.example.com/assets/hero-forge.png"
+      }
+    </script>
+  </head>
+  <body data-game="sunbreak" data-data-url="data/mhr-sunbreak.json" data-anchor="sunbreak-builder" data-default-weapon="太刀">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="怪物猎人配装器首页">
+        <span class="brand-mark">M</span>
+        <span>怪物猎人配装器</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#versions">选择版本</a>
+        <a href="#sunbreak-builder">曙光配装</a>
+        <a href="wilds.html">荒野配装</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img class="hero-media" src="assets/hero-forge.png" alt="猎人工房中的护甲、护石和装饰品配装桌" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Monster Hunter Armor Builder</p>
+          <h1><span>怪物猎人</span><span>中文配装器</span></h1>
+          <p>
+            <span>选择游戏版本，进入对应配装器。</span>
+            <span>曙光版本已接入完整装备、技能、武器与装饰品数据。</span>
+            <span>荒野版本已接入全武器、全防具、技能、护石与装饰品数据。</span>
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#versions">选择版本</a>
+            <a class="button ghost" href="#sunbreak-builder">直接进入曙光配装</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="version-switch" id="versions" aria-labelledby="versions-title">
+        <div class="section-heading">
+          <p class="eyebrow">Choose Version</p>
+          <h2 id="versions-title">选择配装器版本</h2>
+          <p>不同作品的装备、技能和装饰品体系不同，请先选择对应版本。</p>
+        </div>
+        <div class="version-grid">
+          <a class="version-card active" href="#sunbreak-builder">
+            <span class="version-kicker">已可用</span>
+            <h3>怪物猎人崛起：曙光配装器</h3>
+            <p>支持 14 种武器类型、护石、武器孔位、目标技能搜索和装饰品补齐。</p>
+            <strong>进入曙光配装</strong>
+          </a>
+          <a class="version-card" href="wilds.html">
+            <span class="version-kicker">已可用</span>
+            <h3>怪物猎人荒野配装器</h3>
+            <p>支持荒野 1.020.00 全武器、全防具、护石、技能与装饰品搜索。</p>
+            <strong>进入荒野配装</strong>
+          </a>
+        </div>
+      </section>
+
+      <aside class="ad-slot top-ad" aria-label="广告位">
+        <span>Google AdSense 横幅广告位</span>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+          data-ad-slot="1234567890"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </aside>
+
+      <section class="builder-shell" id="sunbreak-builder" aria-labelledby="builder-title">
+        <div class="section-heading">
+          <p class="eyebrow">Sunbreak Armor Set Search</p>
+          <h2 id="builder-title">怪物猎人崛起：曙光配装搜索</h2>
+          <p id="dataStats">正在加载完整装备数据库...</p>
+        </div>
+
+        <div class="builder-layout">
+          <form class="controls" id="buildForm">
+            <fieldset>
+              <legend>武器与偏好</legend>
+              <label>
+                武器类型
+                <select id="weaponType" name="weaponType"></select>
+              </label>
+              <label>
+                具体武器
+                <select id="weaponName" name="weaponName"></select>
+              </label>
+              <label>
+                结果数量
+                <input id="resultLimit" name="resultLimit" type="number" min="3" max="30" value="8" />
+              </label>
+              <div class="slot-row" aria-label="武器孔位">
+                <label>武器 4 槽 <input id="weaponSlot4" type="number" min="0" max="3" value="0" /></label>
+                <label>武器 3 槽 <input id="weaponSlot3" type="number" min="0" max="3" value="0" /></label>
+                <label>武器 2 槽 <input id="weaponSlot2" type="number" min="0" max="3" value="0" /></label>
+                <label>武器 1 槽 <input id="weaponSlot1" type="number" min="0" max="3" value="0" /></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>目标技能</legend>
+              <div class="add-skill-row">
+                <label>
+                  添加技能
+                  <select id="extraSkill"></select>
+                </label>
+                <button class="button secondary" id="addSkill" type="button">添加</button>
+              </div>
+              <div class="skill-grid" id="skillControls"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>指定装备</legend>
+              <div class="manual-grid" id="manualArmorControls"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>逐孔装珠</legend>
+              <div class="manual-deco-list" id="manualDecoControls"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>排除装饰品</legend>
+              <div class="add-skill-row">
+                <label>
+                  装饰品
+                  <select id="decoExcludeSelect"></select>
+                </label>
+                <button class="button secondary" id="addExcludedDeco" type="button">排除</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>护石</legend>
+              <div class="two-col">
+                <label>
+                  护石技能 1
+                  <select id="charmSkillA"></select>
+                </label>
+                <label>
+                  等级
+                  <input id="charmLevelA" type="number" min="0" max="5" value="2" />
+                </label>
+                <label>
+                  护石技能 2
+                  <select id="charmSkillB"></select>
+                </label>
+                <label>
+                  等级
+                  <input id="charmLevelB" type="number" min="0" max="5" value="1" />
+                </label>
+              </div>
+              <div class="slot-row" aria-label="护石孔位">
+                <label>4 槽 <input id="slot4" type="number" min="0" max="3" value="0" /></label>
+                <label>3 槽 <input id="slot3" type="number" min="0" max="3" value="1" /></label>
+                <label>2 槽 <input id="slot2" type="number" min="0" max="3" value="1" /></label>
+                <label>1 槽 <input id="slot1" type="number" min="0" max="3" value="0" /></label>
+              </div>
+            </fieldset>
+
+            <div class="control-actions">
+              <button class="button primary" type="submit">搜索配装</button>
+              <button class="button secondary" id="resetForm" type="button">重置</button>
+              <button class="button secondary" id="copyShare" type="button">复制分享</button>
+            </div>
+          </form>
+
+          <section class="results" aria-live="polite">
+            <div class="results-toolbar">
+              <div>
+                <p class="eyebrow">Results</p>
+                <h3>推荐方案</h3>
+              </div>
+              <label class="compact-select">
+                排序
+                <select id="resultSort">
+                  <option value="match">匹配优先</option>
+                  <option value="defense">防御优先</option>
+                  <option value="slots">剩余孔位优先</option>
+                </select>
+              </label>
+              <label class="compact-select">
+                范围
+                <select id="searchScope">
+                  <option value="smart">智能推荐</option>
+                  <option value="deep">深度搜索</option>
+                  <option value="full">全量搜索</option>
+                </select>
+              </label>
+              <span id="resultCount">等待搜索</span>
+              <button class="button secondary stop-search" id="stopSearch" type="button" hidden>停止</button>
+            </div>
+            <div id="resultsList" class="results-list"></div>
+            <input id="favoriteImport" type="file" accept="application/json,text/plain" hidden />
+          </section>
+        </div>
+      </section>
+
+      <section class="content-grid" id="guide" aria-labelledby="guide-title">
+        <article>
+          <p class="eyebrow">Build Notes</p>
+          <h2 id="guide-title">曙光配装思路</h2>
+          <p>
+            MHR 曙光配装通常先锁定核心输出技能，再用护石和装饰品补齐舒适度。近战可以优先看弱点特效、超会心、攻击、看破和达人艺；弓与弩则常把弹种强化、体术、装填扩充或速射强化放到更高权重。
+          </p>
+          <p>
+            这个工具会计算装备自带技能、护石技能与可用孔位，并用装饰品补足目标等级。结果会显示技能完成度、需要的装饰品、剩余孔位和防御值。
+          </p>
+        </article>
+        <aside class="ad-slot square-ad" aria-label="广告位">
+          <span>Google AdSense 文章侧栏广告位</span>
+          <ins
+            class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+            data-ad-slot="0987654321"
+            data-ad-format="rectangle"
+          ></ins>
+        </aside>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">玩家常见问题</h2>
+        <details open>
+          <summary>我应该选择曙光配装器还是荒野配装器？</summary>
+          <p>如果你玩的是《怪物猎人崛起：曙光》，请选择曙光配装器；如果你玩的是《怪物猎人荒野》，请选择荒野配装器。两个版本的装备、技能和孔位体系不同，不能混用。</p>
+        </details>
+        <details>
+          <summary>我只想找太刀、弓或轻弩的常用配装，怎么开始？</summary>
+          <p>先选择武器类型，页面会载入该武器的常用目标技能。你可以再根据自己的护石和武器孔位调整等级，然后点击“搜索配装”。</p>
+        </details>
+        <details>
+          <summary>为什么我的护石输入后结果会变化很大？</summary>
+          <p>护石技能和孔位会直接影响需要补的装饰品数量。一个好护石通常能让核心技能更容易达成，也能留下更多孔位给生存或舒适技能。</p>
+        </details>
+        <details>
+          <summary>搜索结果里的“可过渡方案”是什么意思？</summary>
+          <p>可过渡方案表示装备组合已经尽量接近你的目标，但仍有技能等级没完全达成。你可以降低目标等级、换护石，或增加武器孔位后再次搜索。</p>
+        </details>
+        <details>
+          <summary>可以把配装条件发给朋友吗？</summary>
+          <p>可以。点击“复制分享”会把当前武器、目标技能、护石和孔位写入链接，其他玩家打开后可以复现你的搜索条件。</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>非官方玩家工具。Monster Hunter、Monster Hunter Rise、Monster Hunter Wilds 及相关名称归其权利方所有。</p>
+      <p><a href="privacy.html">隐私政策</a> · <a href="sitemap.xml">站点地图</a></p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

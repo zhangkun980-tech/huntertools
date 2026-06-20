@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>怪物猎人荒野配装器 | 全武器全装备中文配装搜索</title>
+    <meta
+      name="description"
+      content="怪物猎人荒野中文配装器，支持全武器、全防具、护石、装饰品和技能目标搜索，面向 Monster Hunter Wilds 玩家规划配装。"
+    />
+    <meta name="keywords" content="怪物猎人荒野配装器,MHWilds配装,Monster Hunter Wilds build,荒野装备,荒野技能,护石,装饰品" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://mhr-build.example.com/wilds.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content="怪物猎人荒野配装器" />
+    <meta property="og:description" content="Monster Hunter Wilds 全武器全装备中文配装搜索。" />
+    <meta property="og:image" content="https://mhr-build.example.com/assets/hero-forge.png" />
+    <meta property="og:url" content="https://mhr-build.example.com/wilds.html" />
+    <meta name="theme-color" content="#111827" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-game="wilds" data-data-url="data/mh-wilds.json" data-anchor="wilds-builder" data-default-weapon="太刀">
+    <header class="site-header">
+      <a class="brand" href="index.html#top" aria-label="怪物猎人配装器首页">
+        <span class="brand-mark">M</span>
+        <span>怪物猎人配装器</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="index.html#versions">选择版本</a>
+        <a href="index.html#sunbreak-builder">曙光配装</a>
+        <a href="#wilds-builder">荒野配装</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero compact-hero">
+        <img class="hero-media" src="assets/hero-forge.png" alt="猎人工房中的武器与装备规划桌" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Monster Hunter Wilds Armor Builder</p>
+          <h1><span>怪物猎人荒野</span><span>中文配装器</span></h1>
+          <p>
+            <span>已接入荒野 1.020.00 数据。</span>
+            <span>支持全武器、全防具、技能、护石和装饰品搜索。</span>
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#wilds-builder">开始荒野配装</a>
+            <a class="button ghost" href="index.html#sunbreak-builder">返回曙光配装</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="builder-shell" id="wilds-builder" aria-labelledby="builder-title">
+        <div class="section-heading">
+          <p class="eyebrow">Wilds Armor Set Search</p>
+          <h2 id="builder-title">怪物猎人荒野配装搜索</h2>
+          <p id="dataStats">正在加载荒野完整装备数据库...</p>
+        </div>
+
+        <div class="builder-layout">
+          <form class="controls" id="buildForm">
+            <fieldset>
+              <legend>武器与偏好</legend>
+              <label>
+                武器类型
+                <select id="weaponType" name="weaponType"></select>
+              </label>
+              <label>
+                具体武器
+                <select id="weaponName" name="weaponName"></select>
+              </label>
+              <label>
+                结果数量
+                <input id="resultLimit" name="resultLimit" type="number" min="3" max="30" value="8" />
+              </label>
+              <div class="slot-row" aria-label="额外武器孔位">
+                <label>额外 4 槽 <input id="weaponSlot4" type="number" min="0" max="3" value="0" /></label>
+                <label>额外 3 槽 <input id="weaponSlot3" type="number" min="0" max="3" value="0" /></label>
+                <label>额外 2 槽 <input id="weaponSlot2" type="number" min="0" max="3" value="0" /></label>
+                <label>额外 1 槽 <input id="weaponSlot1" type="number" min="0" max="3" value="0" /></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>目标技能</legend>
+              <div class="add-skill-row">
+                <label>
+                  添加技能
+                  <select id="extraSkill"></select>
+                </label>
+                <button class="button secondary" id="addSkill" type="button">添加</button>
+              </div>
+              <div class="skill-grid" id="skillControls"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>指定装备</legend>
+              <div class="manual-grid" id="manualArmorControls"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>逐孔装珠</legend>
+              <div class="manual-deco-list" id="manualDecoControls"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>排除装饰品</legend>
+              <div class="add-skill-row">
+                <label>
+                  装饰品
+                  <select id="decoExcludeSelect"></select>
+                </label>
+                <button class="button secondary" id="addExcludedDeco" type="button">排除</button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>护石</legend>
+              <label>
+                游戏内护石
+                <select id="talismanName"></select>
+              </label>
+              <div class="two-col">
+                <label>
+                  追加技能 1
+                  <select id="charmSkillA"></select>
+                </label>
+                <label>
+                  等级
+                  <input id="charmLevelA" type="number" min="0" max="7" value="0" />
+                </label>
+                <label>
+                  追加技能 2
+                  <select id="charmSkillB"></select>
+                </label>
+                <label>
+                  等级
+                  <input id="charmLevelB" type="number" min="0" max="7" value="0" />
+                </label>
+              </div>
+              <div class="slot-row" aria-label="额外护石孔位">
+                <label>4 槽 <input id="slot4" type="number" min="0" max="3" value="0" /></label>
+                <label>3 槽 <input id="slot3" type="number" min="0" max="3" value="0" /></label>
+                <label>2 槽 <input id="slot2" type="number" min="0" max="3" value="0" /></label>
+                <label>1 槽 <input id="slot1" type="number" min="0" max="3" value="0" /></label>
+              </div>
+            </fieldset>
+
+            <div class="control-actions">
+              <button class="button primary" type="submit">搜索配装</button>
+              <button class="button secondary" id="resetForm" type="button">重置</button>
+              <button class="button secondary" id="copyShare" type="button">复制分享</button>
+            </div>
+          </form>
+
+          <section class="results" aria-live="polite">
+            <div class="results-toolbar">
+              <div>
+                <p class="eyebrow">Results</p>
+                <h3>推荐方案</h3>
+              </div>
+              <label class="compact-select">
+                排序
+                <select id="resultSort">
+                  <option value="match">匹配优先</option>
+                  <option value="defense">防御优先</option>
+                  <option value="slots">剩余孔位优先</option>
+                </select>
+              </label>
+              <label class="compact-select">
+                范围
+                <select id="searchScope">
+                  <option value="smart">智能推荐</option>
+                  <option value="deep">深度搜索</option>
+                  <option value="full">全量搜索</option>
+                </select>
+              </label>
+              <span id="resultCount">等待搜索</span>
+              <button class="button secondary stop-search" id="stopSearch" type="button" hidden>停止</button>
+            </div>
+            <div id="resultsList" class="results-list"></div>
+            <input id="favoriteImport" type="file" accept="application/json,text/plain" hidden />
+          </section>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">荒野玩家常见问题</h2>
+        <details open>
+          <summary>荒野配装器包含全部武器和装备吗？</summary>
+          <p>当前接入荒野 1.020.00 数据，包含 14 种武器类型、1130 把武器、634 件防具、170 个技能、364 个装饰品和 173 个护石。</p>
+        </details>
+        <details>
+          <summary>为什么可以选具体武器，还能填额外武器孔位？</summary>
+          <p>选择具体武器会自动带入该武器的技能与孔位。额外孔位用于模拟后续强化、临时测试或你想手动覆盖的情况。</p>
+        </details>
+        <details>
+          <summary>装饰品类型会严格区分武器珠和防具珠吗？</summary>
+          <p>会。荒野配装搜索会区分武器孔与防具孔，武器珠只进入武器孔，防具珠和复合珠只进入防具或护石孔。</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>非官方玩家工具。Monster Hunter Wilds 及相关名称归其权利方所有。</p>
+      <p><a href="privacy.html">隐私政策</a> · <a href="sitemap.xml">站点地图</a></p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

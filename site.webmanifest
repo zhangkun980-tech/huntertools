@@ -1,0 +1,16 @@
+{
+  "name": "MHR 配装器",
+  "short_name": "MHR配装",
+  "description": "怪物猎人崛起曙光中文配装模拟器",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f8f9",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}
